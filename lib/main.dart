@@ -1,4 +1,4 @@
-import 'package:chateo/view/pages/landing_page.dart';
+import 'package:chateo/auth/view/pages/landing_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
