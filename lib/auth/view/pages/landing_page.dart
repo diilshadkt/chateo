@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatelessWidget {
+  static const routePath = "/landing";
   const LandingPage({super.key});
 
   @override
