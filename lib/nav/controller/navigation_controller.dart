@@ -5,7 +5,7 @@ part 'navigation_controller.g.dart';
 @riverpod
 class NavigationController extends _$NavigationController {
   @override
-  int build() {
+  int build() { 
     return 0;
   }
 
