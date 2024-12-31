@@ -1,4 +1,4 @@
-import 'package:chateo/core/widgets/serch_field_widget.dart';
+import 'package:chateo/core/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 
 class contacts extends StatelessWidget {
@@ -19,8 +19,10 @@ class contacts extends StatelessWidget {
               children: [Expanded(child: Text("Contacts")), Icon(Icons.add)],
             ),
           ),
-          
-          SearchFieldWidget(),
+          TextfieldWidget(
+            label: "Search",
+            icon: Image(image: AssetImage("assets/icons/ic_search.png")),
+          ),
         ],
       ),
     );

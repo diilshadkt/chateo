@@ -1,4 +1,4 @@
-import 'package:chateo/auth/view/pages/landing_page.dart';
+import 'package:chateo/features/auth/view/pages/landing_page.dart';
 import 'package:go_router/go_router.dart';
 
 final route = GoRouter(routes: [

@@ -1,7 +1,7 @@
-import 'package:chateo/home/chat.dart';
-import 'package:chateo/home/contacts.dart';
-import 'package:chateo/home/more.dart';
-import 'package:chateo/nav/controller/navigation_controller.dart';
+import 'package:chateo/features/home/chat.dart';
+import 'package:chateo/features/home/contacts.dart';
+import 'package:chateo/features/home/more.dart';
+import 'package:chateo/features/nav/controller/navigation_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
