@@ -1,3 +1,4 @@
+import 'package:chateo/core/themes/theme_provider.dart';
 import 'package:chateo/features/auth/view/pages/landing_page.dart';
 import 'package:chateo/features/auth/view/pages/signup_page.dart';
 import 'package:chateo/features/nav/view/pages/navigation_page.dart';
@@ -15,22 +16,17 @@ void main() async {
   runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends HookWidget {
+class MyApp extends ConsumerWidget {
   static final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
   static final navigatorKey = GlobalKey<NavigatorState>();
   const MyApp({super.key});
 
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: ref.watch(themeProvider),
       home: const SignupPage(),
     );
   }

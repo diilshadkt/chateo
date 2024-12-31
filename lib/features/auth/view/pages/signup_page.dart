@@ -14,14 +14,23 @@ class SignupPage extends ConsumerWidget {
     final spacer = AppTheme.of(context).spaces;
 
     return Scaffold(
-      backgroundColor: colors.text,
-      body: Column(
-        children: [
-          Text(
-            constants.txtHeading,
-            style: typography.h500,
-          )
-        ],
+      backgroundColor: colors.secondary,
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.sizeOf(context).height / 7,
+            ),
+            Text(
+              constants.txtHeading,
+              style: typography.h800,
+            ),
+            Text(
+              constants.txtSubHeading,
+              style: typography.h100.copyWith(color: colors.text),
+            )
+          ],
+        ),
       ),
     );
   }
