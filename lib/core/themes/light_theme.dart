@@ -3,8 +3,9 @@ import 'package:chateo/core/themes/extensions/color_extension.dart';
 import 'package:chateo/core/themes/extensions/space_extension.dart';
 import 'package:chateo/core/themes/extensions/typography_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-// part 'light_theme.g.dart';
+part 'light_theme.g.dart';
 
 final _lightTheme = ThemeData(
   brightness: Brightness.light,
@@ -28,7 +29,7 @@ final _lightTheme = ThemeData(
   ],
 );
 
-// @riverpod
-// ThemeData lightTheme(LightThemeRef ref) {
-//   return _lightTheme;
-// }
+@riverpod
+ThemeData lightTheme(LightThemeRef ref) {
+  return _lightTheme;
+}

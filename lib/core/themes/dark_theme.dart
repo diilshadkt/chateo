@@ -3,9 +3,9 @@ import 'package:chateo/core/themes/extensions/color_extension.dart';
 import 'package:chateo/core/themes/extensions/space_extension.dart';
 import 'package:chateo/core/themes/extensions/typography_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-
-// part 'dark_theme.g.dart';
+part 'dark_theme.g.dart';
 
 final _darkTheme = ThemeData(
   brightness: Brightness.dark,
@@ -26,11 +26,10 @@ final _darkTheme = ThemeData(
       linkColor: Colors.blue,
       dimFontColor: AppColorPalettes.grey400,
     ),
-    
   ],
 );
 
-// @riverpod
-// ThemeData darkTheme(DarkThemeRef ref) {
-//   return _darkTheme;
-// }
+@riverpod
+ThemeData darkTheme(DarkThemeRef ref) {
+  return _darkTheme;
+}
