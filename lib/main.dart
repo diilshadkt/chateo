@@ -1,4 +1,5 @@
 import 'package:chateo/features/auth/view/pages/landing_page.dart';
+import 'package:chateo/features/auth/view/pages/signup_page.dart';
 import 'package:chateo/features/nav/view/pages/navigation_page.dart';
 import 'package:chateo/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,7 +31,7 @@ class MyApp extends HookWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LandingPage(),
+      home: const SignupPage(),
     );
   }
 }
