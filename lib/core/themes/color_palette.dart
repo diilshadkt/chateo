@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColorPalettes {
-  static const blue400 = Color.fromARGB(255, 36, 22, 243);
+  static const blue400 = Color.fromARGB(255, 67, 54, 247);
   static const blue900 = Color(0xFF172B4D);
   static const grey400 = Color(0xFF626F86);
   static const white500 = Colors.white;
