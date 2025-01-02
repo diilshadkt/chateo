@@ -13,11 +13,13 @@ class Constants {
   final String txtAlreadyHaveAccount = "Already have an account?";
   final String txtLogin = "Log In";
   // Login
-   final String txtLoginHeading = "Login";
-  final String txtLoginSubHeading = "Remember to get up & stretch once in a while - Your friends at chat";
-  
+  final String txtLoginHeading = "Login";
+  final String txtLoginSubHeading =
+      "Remember to get up & stretch once in a while - Your friends at chat";
+
   final String txtDontHaveAccount = "Don't have an account?";
   final String txtSignup = "Sign Up";
+  final String txtForgotPassword = "Forgto Password?";
 }
 
 @riverpod

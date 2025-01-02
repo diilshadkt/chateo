@@ -120,7 +120,7 @@ class SignupPage extends HookConsumerWidget {
                               decoration: TextDecoration.underline),
                         ),
                         onTap: () {
-                          context.go(LoginPage.routePath);
+                          context.push(LoginPage.routePath);
                         },
                       )
                     ],

@@ -4,6 +4,7 @@ import 'package:chateo/core/widgets/button_widget.dart';
 import 'package:chateo/core/widgets/textfield_widget.dart';
 import 'package:chateo/features/auth/controller/auth_controller.dart';
 import 'package:chateo/features/auth/view/pages/signup_page.dart';
+import 'package:chateo/features/auth/view/widgets/forgot_password_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -84,7 +85,12 @@ class LoginPage extends HookConsumerWidget {
                         .validatePassword,
                   ),
                   SizedBox(
-                    height: MediaQuery.sizeOf(context).height / 40,
+                    height: MediaQuery.sizeOf(context).height / 150,
+                  ),
+                  const Row(
+                    children: [
+                      ForgotPasswordButtonWidget(),
+                    ],
                   ),
 
                   SizedBox(
@@ -114,7 +120,7 @@ class LoginPage extends HookConsumerWidget {
                               decoration: TextDecoration.underline),
                         ),
                         onTap: () {
-                          context.go(SignupPage.routePath);
+                          context.push(SignupPage.routePath);
                         },
                       )
                     ],
