@@ -29,7 +29,6 @@ class TextfieldWidget extends StatelessWidget {
         cursorColor: colors.primary,
         decoration: InputDecoration(
             border: InputBorder.none,
-            
             hintText: label,
             contentPadding: const EdgeInsets.only(left: 6),
             hintStyle: typography.h200,

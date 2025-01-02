@@ -1,7 +1,6 @@
 import 'package:chateo/core/utils/snackbar_utils.dart';
 import 'package:chateo/features/auth/services/auth_service.dart';
 import 'package:chateo/features/auth/view/pages/login_page.dart';
-import 'package:chateo/features/home/more.dart';
 import 'package:chateo/features/nav/view/pages/navigation_page.dart';
 import 'package:chateo/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
