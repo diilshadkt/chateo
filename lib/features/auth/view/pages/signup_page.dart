@@ -7,6 +7,7 @@ import 'package:chateo/features/auth/view/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SignupPage extends HookConsumerWidget {
@@ -67,19 +68,19 @@ class SignupPage extends HookConsumerWidget {
                   ),
                   TextfieldWidget(
                     label: constants.txtEmail,
+                    controller: emailController,
                     validator:
                         ref.read(authControllerProvider.notifier).validateEmail,
-                    controller: emailController,
                   ),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height / 40,
                   ),
                   TextfieldWidget(
                     label: constants.txtPassword,
+                    controller: passwordController,
                     validator: ref
                         .read(authControllerProvider.notifier)
                         .validatePassword,
-                    controller: passwordController,
                   ),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height / 40,
@@ -119,11 +120,7 @@ class SignupPage extends HookConsumerWidget {
                               decoration: TextDecoration.underline),
                         ),
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const LoginPage(),
-                              ));
+                          context.go(LoginPage.routePath);
                         },
                       )
                     ],

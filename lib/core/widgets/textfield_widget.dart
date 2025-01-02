@@ -23,8 +23,8 @@ class TextfieldWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: colors.textInverse, borderRadius: BorderRadius.circular(3)),
       child: TextFormField(
-        controller: controller,
         validator: validator,
+        controller: controller,
         cursorHeight: 16,
         cursorColor: colors.primary,
         decoration: InputDecoration(

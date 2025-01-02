@@ -5,9 +5,9 @@ import 'package:chateo/core/widgets/textfield_widget.dart';
 import 'package:chateo/features/auth/view/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends ConsumerWidget {
-  
   static const routePath = '/login';
   const LoginPage({super.key});
 
@@ -86,11 +86,7 @@ class LoginPage extends ConsumerWidget {
                             decoration: TextDecoration.underline),
                       ),
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const SignupPage(),
-                            ));
+                        context.go(SignupPage.routePath);
                       },
                     )
                   ],
