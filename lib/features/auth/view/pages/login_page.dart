@@ -2,9 +2,7 @@ import 'package:chateo/core/constants/constants.dart';
 import 'package:chateo/core/themes/app_theme.dart';
 import 'package:chateo/core/widgets/button_widget.dart';
 import 'package:chateo/core/widgets/textfield_widget.dart';
-import 'package:chateo/features/auth/view/pages/login_page.dart';
 import 'package:chateo/features/auth/view/pages/signup_page.dart';
-import 'package:chateo/features/auth/view/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -37,9 +35,14 @@ class LoginPage extends ConsumerWidget {
                 SizedBox(
                   height: MediaQuery.sizeOf(context).height / 80,
                 ),
-                Text(
-                  constants.txtLoginSubHeading,
-                  style: typography.h100.copyWith(color: colors.text),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.sizeOf(context).width / 8),
+                  child: Text(
+                    textAlign: TextAlign.center,
+                    constants.txtLoginSubHeading,
+                    style: typography.h100.copyWith(color: colors.text),
+                  ),
                 ),
                 SizedBox(
                   height: MediaQuery.sizeOf(context).height / 13,

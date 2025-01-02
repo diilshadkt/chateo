@@ -3,7 +3,6 @@ import 'package:chateo/core/themes/app_theme.dart';
 import 'package:chateo/core/widgets/button_widget.dart';
 import 'package:chateo/core/widgets/textfield_widget.dart';
 import 'package:chateo/features/auth/view/pages/login_page.dart';
-import 'package:chateo/features/auth/view/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
