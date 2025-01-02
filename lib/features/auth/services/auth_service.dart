@@ -15,6 +15,10 @@ class AuthService {
     await FirebaseAuth.instance.signOut();
   }
 
+    static Future<void> sendPasswordResetEmail(String email) async {
+    await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+  }
+
   static User? getCurrentUserSync() {
     return FirebaseAuth.instance.currentUser;
   }

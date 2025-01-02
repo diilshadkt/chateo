@@ -48,6 +48,17 @@ class AuthController extends _$AuthController {
     }
   }
 
+  Future<void> forgotPassword(String email) async {
+    try {
+      await AuthService.sendPasswordResetEmail(email);
+
+      SnackbarUtils.showMessage("Password Reset mail sent successfully");
+    } catch (e) {
+      SnackbarUtils.showMessage(e.toString());
+    }
+  }
+
+// validations Logic
   String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       return "Email is required";
