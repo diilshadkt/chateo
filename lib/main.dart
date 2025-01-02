@@ -1,3 +1,4 @@
+import 'package:chateo/core/router/router.dart';
 import 'package:chateo/core/themes/theme_provider.dart';
 import 'package:chateo/features/auth/view/pages/landing_page.dart';
 import 'package:chateo/features/auth/view/pages/signup_page.dart';
@@ -23,11 +24,12 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp.router(
+      title: 'chateo',
+      routerConfig: route,
+      scaffoldMessengerKey: MyApp.scaffoldMessengerKey,
       debugShowCheckedModeBanner: false,
       theme: ref.watch(themeProvider),
-      home: const SignupPage(),
     );
   }
 }

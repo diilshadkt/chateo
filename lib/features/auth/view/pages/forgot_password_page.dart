@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
+  
+  static const routePath = '/forgot';
   const ForgotPasswordPage({super.key});
 
   @override

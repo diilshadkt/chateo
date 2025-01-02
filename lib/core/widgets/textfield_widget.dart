@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 class TextfieldWidget extends StatelessWidget {
   final String? label;
   final Widget? icon;
-  final String? hintText;
+  final String? Function(String?)? validator;
+  final TextEditingController? controller;
   const TextfieldWidget({
     super.key,
     this.label,
     this.icon,
-    this.hintText,
+    this.controller,
+    this.validator,
   });
 
   @override
@@ -20,7 +22,9 @@ class TextfieldWidget extends StatelessWidget {
       height: MediaQuery.sizeOf(context).height / 20,
       decoration: BoxDecoration(
           color: colors.textInverse, borderRadius: BorderRadius.circular(3)),
-      child: TextField(
+      child: TextFormField(
+        controller: controller,
+        validator: validator,
         cursorHeight: 16,
         cursorColor: colors.primary,
         decoration: InputDecoration(
