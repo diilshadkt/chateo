@@ -7,6 +7,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class NavigationPage extends HookConsumerWidget {
+  static const routePath = "/nav";
   const NavigationPage({super.key});
 
   @override

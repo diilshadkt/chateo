@@ -1,17 +1,49 @@
 import 'package:chateo/core/utils/snackbar_utils.dart';
 import 'package:chateo/features/auth/services/auth_service.dart';
+import 'package:chateo/features/auth/view/pages/login_page.dart';
+import 'package:chateo/features/home/more.dart';
+import 'package:chateo/features/nav/view/pages/navigation_page.dart';
+import 'package:chateo/main.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'auth_controller.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 class AuthController extends _$AuthController {
   @override
-  void build() {}
+  void build() {
+    FirebaseAuth.instance.authStateChanges().listen((user) {
+      if (user == null) {
+        MyApp.navigatorKey.currentContext!.go(LoginPage.routePath);
+      } else {
+        MyApp.navigatorKey.currentContext!.go(NavigationPage.routePath);
+      }
+    });
+  }
 
   Future<void> signup(String email, String password) async {
     try {
       await AuthService.signup(email, password);
       SnackbarUtils.showMessage("Signup Success");
+    } catch (e) {
+      SnackbarUtils.showMessage(e.toString());
+    }
+  }
+
+  Future<void> login(String email, String password) async {
+    try {
+      await AuthService.login(email, password);
+      SnackbarUtils.showMessage("Login Successfully");
+    } catch (e) {
+      SnackbarUtils.showMessage(e.toString());
+    }
+  }
+
+  Future<void> logout() async {
+    try {
+      await AuthService.logout();
+      SnackbarUtils.showMessage("Logout Successfully");
     } catch (e) {
       SnackbarUtils.showMessage(e.toString());
     }

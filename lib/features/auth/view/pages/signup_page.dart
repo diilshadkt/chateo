@@ -94,9 +94,9 @@ class SignupPage extends HookConsumerWidget {
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height / 13,
                   ),
-                  ButtonWidget(onPressed: () {
-                    onSignupButtonClicked();
-                  }),
+                  ButtonWidget(onPressed: 
+                    onSignupButtonClicked,
+                  ),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height / 40,
                   ),
