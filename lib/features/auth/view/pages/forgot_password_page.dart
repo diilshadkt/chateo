@@ -3,6 +3,7 @@ import 'package:chateo/core/themes/app_theme.dart';
 import 'package:chateo/core/widgets/button_widget.dart';
 import 'package:chateo/core/widgets/textfield_widget.dart';
 import 'package:chateo/features/auth/controller/auth_controller.dart';
+import 'package:chateo/features/auth/view/pages/login_page.dart';
 import 'package:chateo/features/auth/view/pages/signup_page.dart';
 import 'package:chateo/features/auth/view/widgets/forgot_password_widget.dart';
 import 'package:flutter/material.dart';
@@ -47,12 +48,25 @@ class ForgotPasswordPage extends HookConsumerWidget {
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height / 5,
                   ),
-                  Text(
-                    constants.txtForgotHeading,
-                    style: typography.h800,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      InkWell(
+                          onTap: () {
+                            context.go(LoginPage.routePath);
+                          },
+                          child: const Icon(Icons.arrow_back)),
+                      SizedBox(
+                        width: MediaQuery.sizeOf(context).width / 7,
+                      ),
+                      Text(
+                        constants.txtForgotHeading,
+                        style: typography.h800,
+                      ),
+                    ],
                   ),
                   SizedBox(
-                    height: MediaQuery.sizeOf(context).height / 80,
+                    height: MediaQuery.sizeOf(context).height / 15,
                   ),
                   TextfieldWidget(
                     label: constants.txtEmail,
@@ -61,20 +75,16 @@ class ForgotPasswordPage extends HookConsumerWidget {
                         ref.read(authControllerProvider.notifier).validateEmail,
                   ),
                   SizedBox(
-                    height: MediaQuery.sizeOf(context).height / 80,
+                    height: MediaQuery.sizeOf(context).height / 100,
                   ),
 
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: MediaQuery.sizeOf(context).width / 8),
-                    child: Text(
-                      textAlign: TextAlign.center,
-                      constants.txtForgotSubHeading,
-                      style: typography.h100.copyWith(color: colors.text),
-                    ),
+                  Text(
+                    textAlign: TextAlign.center,
+                    constants.txtForgotSubHeading,
+                    style: typography.h200.copyWith(color: colors.text),
                   ),
                   SizedBox(
-                    height: MediaQuery.sizeOf(context).height / 13,
+                    height: MediaQuery.sizeOf(context).height / 15,
                   ),
 
                   ButtonWidget(onPressed: onButtonClicked),

@@ -21,9 +21,10 @@ class Constants {
   final String txtSignup = "Sign Up";
   final String txtForgotPassword = "Forgto Password?";
   //forgot Page
-   final String txtForgotHeading = "Forgot Password";
-    final String txtForgotSubHeading = "Enter the email address you used to create your account and we will email you a link to reset your password.";
-    //  final String txtSignup = "Sign Up";
+  final String txtForgotHeading = "Forgot Password";
+  final String txtForgotSubHeading =
+      "Enter the email address you used to create your account and we will email you a link to\nreset your password.";
+  //  final String txtSignup = "Sign Up";
 }
 
 @riverpod
