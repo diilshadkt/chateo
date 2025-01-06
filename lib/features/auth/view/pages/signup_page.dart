@@ -16,6 +16,7 @@ class SignupPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final nameController = useTextEditingController();
     final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
     // final ConfirmPasswordController = useTextEditingController();
@@ -28,9 +29,10 @@ class SignupPage extends HookConsumerWidget {
 
     void onSignupButtonClicked() {
       if (FormKey.currentState!.validate()) {
-        ref
-            .read(authControllerProvider.notifier)
-            .signup(emailController.text, passwordController.text);
+        ref.read(authControllerProvider.notifier).signup(
+            name: nameController.text,
+            email: emailController.text,
+            password: passwordController.text);
       }
     }
 
@@ -62,7 +64,12 @@ class SignupPage extends HookConsumerWidget {
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height / 13,
                   ),
-                  TextfieldWidget(label: constants.txtUserName),
+                  TextfieldWidget(
+                    label: constants.txtUserName,
+                    controller: nameController,
+                    validator:
+                        ref.read(authControllerProvider.notifier).validateName,
+                  ),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height / 40,
                   ),
@@ -94,8 +101,8 @@ class SignupPage extends HookConsumerWidget {
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height / 13,
                   ),
-                  ButtonWidget(onPressed: 
-                    onSignupButtonClicked,
+                  ButtonWidget(
+                    onPressed: onSignupButtonClicked,
                   ),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height / 40,

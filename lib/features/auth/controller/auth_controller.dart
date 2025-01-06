@@ -1,4 +1,6 @@
 import 'package:chateo/core/utils/snackbar_utils.dart';
+import 'package:chateo/features/auth/models/user_model.dart';
+import 'package:chateo/features/auth/services/auth_db_service.dart';
 import 'package:chateo/features/auth/services/auth_service.dart';
 import 'package:chateo/features/auth/view/pages/login_page.dart';
 import 'package:chateo/features/nav/view/pages/navigation_page.dart';
@@ -21,9 +23,19 @@ class AuthController extends _$AuthController {
     });
   }
 
-  Future<void> signup(String email, String password) async {
+  Future<void> signup(
+      {required String name,
+      required String email,
+      required String password}) async {
     try {
-      await AuthService.signup(email, password);
+      await AuthService.signup(name: name, email: email, password: password);
+
+      final userDetails = AuthService.getCurrentUserSync();
+      final user = UserModel(
+          id: userDetails!.uid,
+          name: userDetails.displayName!,
+          email: userDetails.email!);
+      AuthDbService.createUser(user);
       SnackbarUtils.showMessage("Signup Success");
     } catch (e) {
       SnackbarUtils.showMessage(e.toString());
@@ -59,6 +71,12 @@ class AuthController extends _$AuthController {
   }
 
 // validations Logic
+  String? validateName(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Name is required";
+    }
+  }
+
   String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       return "Email is required";
