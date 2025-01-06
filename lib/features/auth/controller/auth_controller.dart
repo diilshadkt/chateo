@@ -33,8 +33,8 @@ class AuthController extends _$AuthController {
       final userDetails = AuthService.getCurrentUserSync();
       final user = UserModel(
           id: userDetails!.uid,
-          name: userDetails.displayName!,
-          email: userDetails.email!);
+          name: name,
+          email: email);
       AuthDbService.createUser(user);
       SnackbarUtils.showMessage("Signup Success");
     } catch (e) {
