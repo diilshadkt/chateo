@@ -62,7 +62,7 @@ class SignupPage extends HookConsumerWidget {
                     style: typography.h100.copyWith(color: colors.text),
                   ),
                   SizedBox(
-                    height: MediaQuery.sizeOf(context).height / 13,
+                    height: MediaQuery.sizeOf(context).height / 20,
                   ),
                   TextfieldWidget(
                     label: constants.txtUserName,
@@ -73,6 +73,7 @@ class SignupPage extends HookConsumerWidget {
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height / 40,
                   ),
+
                   TextfieldWidget(
                     label: constants.txtEmail,
                     controller: emailController,
@@ -82,6 +83,7 @@ class SignupPage extends HookConsumerWidget {
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height / 40,
                   ),
+
                   TextfieldWidget(
                     label: constants.txtPassword,
                     controller: passwordController,
@@ -92,6 +94,7 @@ class SignupPage extends HookConsumerWidget {
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height / 40,
                   ),
+
                   TextfieldWidget(
                     label: constants.txtConfirmPassword,
                     validator: (value) => ref

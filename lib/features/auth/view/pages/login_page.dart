@@ -65,7 +65,7 @@ class LoginPage extends HookConsumerWidget {
                     ),
                   ),
                   SizedBox(
-                    height: MediaQuery.sizeOf(context).height / 13,
+                    height: MediaQuery.sizeOf(context).height / 20,
                   ),
 
                   TextfieldWidget(
@@ -85,8 +85,9 @@ class LoginPage extends HookConsumerWidget {
                         .validatePassword,
                   ),
                   SizedBox(
-                    height: MediaQuery.sizeOf(context).height / 150,
+                    height: MediaQuery.sizeOf(context).height / 100,
                   ),
+
                   const Row(
                     children: [
                       ForgotPasswordButtonWidget(),

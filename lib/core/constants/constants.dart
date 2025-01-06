@@ -24,7 +24,10 @@ class Constants {
   final String txtForgotHeading = "Forgot Password";
   final String txtForgotSubHeading =
       "Enter the email address you used to create your account and we will email you a link to\nreset your password.";
-  //  final String txtSignup = "Sign Up";
+
+  //chat Page
+  final String txtChat = "Chats";
+  final String txtSearchHintText = "Placeholder";
 }
 
 @riverpod

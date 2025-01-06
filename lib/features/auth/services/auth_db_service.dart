@@ -1,6 +1,5 @@
 import 'package:chateo/features/auth/models/user_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthDbService {
   static final userCollection =
@@ -12,5 +11,13 @@ class AuthDbService {
 
   static Future<void> createUser(UserModel user) async {
     await userCollection.doc(user.id).set(user);
+  }
+
+  static Stream<List<UserModel>> getUserStream() {
+    final userStream = userCollection.snapshots();
+
+    final userListStream = userStream
+        .map((snapshot) => snapshot.docs.map((doc) => doc.data()).toList());
+    return userListStream;
   }
 }

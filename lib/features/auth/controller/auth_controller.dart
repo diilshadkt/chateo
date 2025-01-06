@@ -31,10 +31,7 @@ class AuthController extends _$AuthController {
       await AuthService.signup(name: name, email: email, password: password);
 
       final userDetails = AuthService.getCurrentUserSync();
-      final user = UserModel(
-          id: userDetails!.uid,
-          name: name,
-          email: email);
+      final user = UserModel(id: userDetails!.uid, name: name, email: email);
       AuthDbService.createUser(user);
       SnackbarUtils.showMessage("Signup Success");
     } catch (e) {
@@ -111,5 +108,9 @@ class AuthController extends _$AuthController {
     }
 
     return null;
+  }
+
+  Stream<List<UserModel>> getUserStream() {
+    return AuthDbService.getUserStream();
   }
 }
