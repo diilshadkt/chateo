@@ -3,7 +3,7 @@ import 'package:chateo/features/auth/view/pages/forgot_password_page.dart';
 import 'package:chateo/features/auth/view/pages/landing_page.dart';
 import 'package:chateo/features/auth/view/pages/login_page.dart';
 import 'package:chateo/features/auth/view/pages/signup_page.dart';
-import 'package:chateo/features/home/more.dart';
+import 'package:chateo/features/home/view/pages/more.dart';
 import 'package:chateo/features/nav/view/pages/navigation_page.dart';
 import 'package:chateo/main.dart';
 import 'package:go_router/go_router.dart';

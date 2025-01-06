@@ -2,6 +2,7 @@ import 'package:chateo/core/constants/constants.dart';
 import 'package:chateo/core/themes/app_theme.dart';
 import 'package:chateo/core/widgets/textfield_widget.dart';
 import 'package:chateo/features/auth/controller/auth_controller.dart';
+import 'package:chateo/features/home/view/widgets/user_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -46,22 +47,28 @@ class Chat extends ConsumerWidget {
             SizedBox(
               height: 500,
               child: StreamBuilder(
-                stream: ref.read(authControllerProvider.notifier).getUserStream(),
-                builder: (context, snapshot) {
-                  if(snapshot.hasError){
-                    
-                  }
-                  return ListView.builder(
-                    itemCount: 15,
-                    itemBuilder: (context, index) {
-                      return const ListTile(
-                        leading: Icon(Icons.person),
-                        title: Text("Alex"),
+                  stream:
+                      ref.read(authControllerProvider.notifier).getUserStream(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return const Center(
+                        child: Text("An error occured"),
                       );
-                    },
-                  );
-                }
-              ),
+                    }
+                    if (!snapshot.hasData) {
+                      const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                    return ListView.builder(
+                      itemCount: snapshot.data!.length,
+                      itemBuilder: (context, index) {
+                        return  UserListWidget(
+                          user: snapshot.data![index],
+                        );
+                      },
+                    );
+                  }),
             )
           ],
         ),
