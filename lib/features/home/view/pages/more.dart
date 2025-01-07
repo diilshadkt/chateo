@@ -19,8 +19,7 @@ class More extends ConsumerWidget {
     }
 
     return Scaffold(
-      backgroundColor: Colors.orange,
-      
+      backgroundColor: colors.secondary,
       body: Column(
         children: [
           const SizedBox(
