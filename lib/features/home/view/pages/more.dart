@@ -8,12 +8,17 @@ class More extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final constants = ref.watch(constantsProvider);
+    final colors = AppTheme.of(context).colors;
+    final typography = AppTheme.of(context).typography;
+    final spacer = AppTheme.of(context).spaces;
     void onLogoutButtonClicked() {
       ref.read(authControllerProvider.notifier).logout();
     }
 
     return Scaffold(
       backgroundColor: Colors.orange,
+      
       body: Column(
         children: [
           const SizedBox(
